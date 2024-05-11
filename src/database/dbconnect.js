@@ -17,7 +17,11 @@ export const DataBaseConnect = async () => {
 
     await mongoose.connect(`${configuration.URL}/${configuration.DB}`);
   } catch (error) {
-    console.log("Failed to establish connection with database : ", error);
+    if (error instanceof mongoose.Error.MongooseServerSelectionError) {
+      console.error("Error selecting a server:", error);
+    } else {
+      console.error("Error connecting to MongoDB:", error);
+    }
     process.exit(1);
   }
 };
