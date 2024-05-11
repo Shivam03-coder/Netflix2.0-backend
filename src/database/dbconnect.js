@@ -15,7 +15,7 @@ export const DataBaseConnect = async () => {
       console.log("Mongoose disconnected from MongoDB");
     });
 
-    await mongoose.connect(`${configuration.URL}/${configuration.DB}`);
+    await mongoose.connect(`${configuration.URL}`);
   } catch (error) {
     if (error instanceof mongoose.Error.MongooseServerSelectionError) {
       console.error("Error selecting a server:", error);
