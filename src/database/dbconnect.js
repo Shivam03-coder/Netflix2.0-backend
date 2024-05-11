@@ -16,6 +16,7 @@ export const DataBaseConnect = async () => {
     });
 
     mongoose.connect(`${configuration.URL}/${configuration.DB}`);
+    
   } catch (error) {
     console.log("Failed to establish connection with database : ", error);
     process.exit(1);
