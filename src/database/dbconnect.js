@@ -15,10 +15,7 @@ export const DataBaseConnect = async () => {
       console.log("Mongoose disconnected from MongoDB");
     });
 
-    await mongoose.connect(`${configuration.URL}/${configuration.DB}`, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(`${configuration.URL}/${configuration.DB}`);
   } catch (error) {
     console.log("Failed to establish connection with database : ", error);
     process.exit(1);
