@@ -14,6 +14,7 @@ app.use(
     origin: `${configuration.BASE_URL}`,
     credentials: true,
     optionsSuccessStatus: 200,
+    methods: ["GET", "POST"],
   })
 );
 
